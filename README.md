@@ -173,4 +173,4 @@ This project is open-sourced under the MIT License.
 
 Contact
 
-For questions or suggestions: MOHAMMAD NAVIWALA
+For questions or suggestions: MOHAMMAD NAVIWALA AND MAZIN AHMED
