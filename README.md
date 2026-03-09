@@ -1,24 +1,35 @@
 Mini Task Manager
-<p align="center"> <a href="https://laravel.com" target="_blank"> <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo"> </a> </p>
 
-A simple task management application built with Laravel
- that allows users to register, log in, create, update, and delete tasks. It also includes an admin panel for managing users and tasks.
+
+Mini Task Manager is a web application built with Laravel that allows users to manage tasks efficiently. It includes full user authentication, an admin panel, and task management functionality.
 
 Features
 
-User authentication (login, register, logout)
+User Authentication
 
-Password reset via email
+Register, login, logout
 
 Email verification
 
-CRUD operations for tasks
+Password reset via email
 
-Admin dashboard for managing users and tasks
+Task Management
+
+Create, read, update, delete tasks
+
+Assign tasks (optional admin functionality)
+
+Admin Panel
+
+View all users and tasks
+
+Delete users or tasks
+
+Security
 
 CSRF protection
 
-Responsive UI with Blade templates
+Secure password hashing
 
 Installation
 Requirements
@@ -29,28 +40,26 @@ Composer
 
 MySQL / MariaDB / PostgreSQL
 
-Node.js & npm (for compiling assets)
+Node.js & npm
 
-Mail server for sending emails (e.g., SMTP, Mailtrap for testing)
+Mail server (SMTP or Mailtrap for testing)
 
 Steps
 
-Clone the repository:
+Clone the repository
 
 git clone https://github.com/yourusername/mini-task-manager.git
 cd mini-task-manager
 
-Install PHP dependencies:
+Install dependencies
 
 composer install
 
-Copy .env.example to .env and configure your environment variables:
+Copy environment file
 
 cp .env.example .env
 
-Set database credentials
-
-Set mail credentials for password reset:
+Update .env with your database credentials and mail settings:
 
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
@@ -61,42 +70,56 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=hello@example.com
 MAIL_FROM_NAME="Mini Task Manager"
 
-Generate application key:
+Generate application key
 
 php artisan key:generate
 
-Run migrations:
+Run database migrations
 
 php artisan migrate
 
-(Optional) Seed database:
+Optional: Seed the database
 
 php artisan db:seed
 
-Install Node.js dependencies & compile assets:
+Install Node.js dependencies & compile assets
 
 npm install
 npm run dev
 
-Start the development server:
+Start the development server
 
 php artisan serve
 
-Your app will run at http://localhost:8000
+Application will run at: http://localhost:8000
 
 Usage
 
-Register a new user
+Dashboard
 
-Log in to access the dashboard
+View all tasks
 
-Create tasks from the dashboard
+Add new tasks
 
 Edit or delete tasks
 
-Admin panel is accessible if the user has admin privileges
+Admin Panel
 
-Routes
+Manage users
+
+Manage all tasks
+
+Password Reset
+
+Click "Forgot Password?"
+
+Receive reset link via email
+
+Reset your password securely
+
+Routes Overview
+
+Tasks
 
 GET /tasks – List tasks
 
@@ -106,21 +129,43 @@ PUT/PATCH /tasks/{id} – Update task
 
 DELETE /tasks/{id} – Delete task
 
+Admin
+
 GET /admin/dashboard – Admin panel
 
-Password reset routes are fully functional via /forgot-password and /reset-password/{token}
+Authentication
+
+GET /login – Login form
+
+POST /login – Login action
+
+GET /register – Registration form
+
+POST /register – Register action
+
+POST /logout – Logout
+
+Password Reset
+
+GET /forgot-password – Request password reset
+
+POST /forgot-password – Send reset email
+
+GET /reset-password/{token} – Reset form
+
+POST /reset-password – Update password
 
 Contributing
 
 Fork the repository
 
-Create a new branch (git checkout -b feature/YourFeature)
+Create a new branch: git checkout -b feature/YourFeature
 
-Commit your changes (git commit -m 'Add new feature')
+Commit your changes: git commit -m "Add new feature"
 
-Push to the branch (git push origin feature/YourFeature)
+Push to branch: git push origin feature/YourFeature
 
-Open a pull request
+Open a Pull Request
 
 License
 
@@ -128,4 +173,4 @@ This project is open-sourced under the MIT License.
 
 Contact
 
-For questions or suggestions, contact mohammad naviwala
+For questions or suggestions: MOHAMMAD NAVIWALA
