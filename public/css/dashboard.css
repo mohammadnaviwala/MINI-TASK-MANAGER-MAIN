@@ -1,0 +1,495 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* DASHBOARD BACKGROUND */
+.dashboard-background {
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:50px 20px;
+    background: radial-gradient(circle at top,#1a2a6c,#16222a);
+    overflow:hidden;
+    position:relative;
+}
+
+/* FLOATING GRAPHIC CIRCLES */
+.circle {
+    position:absolute;
+    border-radius:50%;
+    opacity:0.6;
+    filter: blur(100px);
+    animation:float 12s infinite alternate;
+}
+
+.circle1 { width:400px; height:400px; background:#6dd5ed; top:-100px; left:-100px; }
+.circle2 { width:350px; height:350px; background:#ff7eb3; bottom:-120px; right:-150px; animation-duration:15s; }
+.circle3 { width:300px; height:300px; background:#764ba2; top:150px; right:-100px; animation-duration:18s; }
+
+@keyframes float{
+    0% { transform:translateY(0px) translateX(0px); }
+    100% { transform:translateY(40px) translateX(20px); }
+}
+
+/* DASHBOARD CONTAINER */
+.dashboard-container {
+    max-width: 1200px;
+    width:100%;
+    z-index:1;
+}
+
+/* DASHBOARD TITLE */
+.dashboard-title {
+    font-size:36px;
+    font-weight:600;
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* SUCCESS MESSAGE */
+.success-msg {
+    background: #22c55e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* USERS GRID */
+.users-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap:25px;
+}
+
+/* USER CARD */
+.user-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius:20px;
+    padding:20px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    color:white;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* USER HEADER */
+.user-header h3 { font-size:20px; color:#fff; }
+.user-email { font-size:14px; color:#ccc; }
+
+/* DELETE BUTTON */
+.btn-delete, .btn-task-delete {
+    background: linear-gradient(45deg,#ff7eb3,#6dd5ed);
+    border:none;
+    color:white;
+    padding:8px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:10px;
+    transition:all 0.3s ease;
+    font-weight:600;
+}
+
+.btn-delete:hover, .btn-task-delete:hover {
+    transform: translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* TASKS LIST */
+.tasks-list {
+    list-style:none;
+    margin-top:10px;
+    padding-left:0;
+}
+
+.tasks-list li {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    background: rgba(255,255,255,0.1);
+    padding:8px 12px;
+    border-radius:10px;
+    margin-bottom:8px;
+}
+
+.task-title { font-weight:500; color:white; }
+
+/* TASK STATUS BADGES */
+.task-status {
+    padding:4px 10px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:600;
+    color:white;
+    text-transform:uppercase;
+}
+
+.task-status.pending { background:#facc15; }
+.task-status.completed { background:#22c55e; }
+.task-status.inprogress { background:#3b82f6; }
+
+/* NO TASKS */
+.no-tasks { color:#ddd; font-style:italic; }
+
+/* LINKS & FORMS text */
+a { color:#ffd700; transition:0.3s; }
+a:hover { color:white; }
+
+input, select, textarea { color:#000; }
+
+/* NAVBAR & HEADER DARK THEME */
+.navbar-dark, .header-dark {
+    background: radial-gradient(circle at top,#1a2a6c,#16222a);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: white !important;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Navbar links */
+.navbar-dark a,
+.navbar-dark .text-white,
+.navbar-dark .dropdown-link,
+.navbar-dark .responsive-nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar-dark a:hover,
+.navbar-dark .dropdown-link:hover,
+.navbar-dark .responsive-nav-link:hover {
+    color: #ff7eb3 !important;
+}
+/* Dropdown fix for navbar */
+.navbar-dark .dropdown-link {
+    background: radial-gradient(circle at top,#1a2a6c,#16222a) !important; /* match dashboard */
+    color: white !important;  /* make text visible */
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .dropdown-link:hover {
+    background: #ff7eb3 !important; /* hover effect */
+    color: white !important;
+}
+/* Reuse dashboard background & floating circles from admin dashboard */
+.dashboard-background {
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:50px 20px;
+    background: radial-gradient(circle at top,#1a2a6c,#16222a);
+    overflow:hidden;
+    position:relative;
+}
+
+/* Floating Circles */
+.circle {
+    position:absolute;
+    border-radius:50%;
+    opacity:0.6;
+    filter: blur(100px);
+    animation:float 12s infinite alternate;
+}
+
+.circle1 { width:400px; height:400px; background:#6dd5ed; top:-100px; left:-100px; }
+.circle2 { width:350px; height:350px; background:#ff7eb3; bottom:-120px; right:-150px; animation-duration:15s; }
+.circle3 { width:300px; height:300px; background:#764ba2; top:150px; right:-100px; animation-duration:18s; }
+
+@keyframes float {
+    0% { transform:translateY(0px) translateX(0px); }
+    100% { transform:translateY(40px) translateX(20px); }
+}
+
+/* Container */
+.dashboard-container {
+    max-width: 1200px;
+    width:100%;
+    z-index:1;
+}
+
+/* Title */
+.dashboard-title {
+    font-size:36px;
+    font-weight:600;
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* Button Gradient */
+.btn-gradient {
+    background: linear-gradient(45deg,#ff7eb3,#6dd5ed);
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    font-weight:600;
+    display:inline-block;
+    transition: all 0.3s ease;
+    text-align:center;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Tasks Grid */
+.tasks-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap:25px;
+}
+
+/* Task Card */
+.user-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius:20px;
+    padding:20px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    color:white;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* Task Header */
+.user-header h3 { font-size:20px; color:white; font-weight:600; }
+.user-header .task-due { font-size:14px; color:#ccc; margin-top:4px; }
+
+/* Task Status */
+.task-status {
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:600;
+    color:white;
+    text-transform:uppercase;
+    margin-top:8px;
+}
+
+.task-status.pending { background:#facc15; }
+.task-status.completed { background:#22c55e; }
+.task-status.inprogress { background:#3b82f6; }
+
+/* Edit & Delete Buttons */
+.btn-edit, .btn-delete {
+    padding:8px 16px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+    transition:all 0.3s ease;
+    text-align:center;
+}
+
+.btn-edit {
+    background: #ff7eb3;
+    color:white;
+}
+
+.btn-edit:hover {
+    transform: translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.btn-delete {
+    background: linear-gradient(45deg,#ff7eb3,#6dd5ed);
+    color:white;
+}
+
+.btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* No Tasks */
+.no-tasks {
+    color:#ddd;
+    font-style:italic;
+    text-align:center;
+    margin-top:30px;
+}
+
+/* Pagination */
+.pagination {
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.pagination a, .pagination span {
+    background: rgba(255,255,255,0.1);
+    color:white;
+    padding:8px 12px;
+    margin:0 4px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:all 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #ff7eb3;
+    color:white;
+}
+/* Dark input fields for dashboard */
+.task-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Placeholder color */
+.task-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* On focus */
+.task-input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Dropdown datalist fix (works on Chrome) */
+input[list]::-webkit-calendar-picker-indicator,
+input[list]::-webkit-inner-spin-button {
+    filter: invert(1);
+}
+
+datalist option {
+    background-color: #1a2a6c; /* same as dashboard top color */
+    color: white;
+}
+/* Dark dropdown for select */
+.task-input, select.task-input {
+    -webkit-appearance: none; /* remove default arrow styling on Chrome/Safari */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;         /* fallback */
+    background-color: rgba(255,255,255,0.1); /* semi-transparent dark */
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Placeholder color inside select (works on some browsers) */
+select.task-input option {
+    background-color: #1a2a6c; /* match dashboard background */
+    color: white; /* visible text */
+}
+
+/* Focus effect */
+select.task-input:focus {
+    background-color: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.6);
+    box-shadow: 0 0 5px rgba(255,255,255,0.3);
+    color: white;
+}
+.filter-form{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+/* Filter Form Layout */
+.filter-form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+    align-items:center;
+}
+
+/* Smaller Inputs */
+.task-input{
+    padding:8px 12px;
+    font-size:14px;
+    width:180px;
+    height:38px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.3);
+    background:rgba(255,255,255,0.1);
+    color:white;
+}
+
+/* Dropdown text visible */
+.task-input option{
+    color:black;
+}
+
+/* Smaller buttons */
+.btn-delete{
+    padding:8px 16px;
+    font-size:14px;
+    height:38px;
+    border-radius:8px;
+}
+
+/* Reset button spacing */
+.filter-form a{
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+}
+/* Form group spacing & alignment */
+.user-card .form-group {
+    display: flex;
+    flex-direction: column; /* stack label on top of input */
+    margin-bottom: 20px;
+}
+
+.user-card .form-group label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #fff; /* white text */
+}
+
+/* Make textarea consistent with input height */
+.user-card .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Buttons center */
+.user-card form button {
+    margin-top: 10px;
+}
